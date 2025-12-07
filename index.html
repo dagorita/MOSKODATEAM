@@ -6,7 +6,20 @@
     <title>MOSKODATEAM | 80s Arcade Universe</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Polyfill for process.env to prevent crash in browser -->
+    <script>
+      window.process = {
+        env: {
+          // PON TU API KEY AQUI SI QUIERES QUE EL CHAT FUNCIONE EN GITHUB PAGES
+          // NOTA: En producción real, no debes exponer tu API Key así.
+          API_KEY: '' 
+        }
+      };
+    </script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -88,6 +101,7 @@
   <body>
     <div id="app" class="min-h-screen flex flex-col bg-arcade-dark text-white crt-flicker"></div>
     <div class="scanline-overlay"></div>
-    <script type="module" src="/index.tsx"></script>
+    <!-- IMPORTANT: Link to .js file with relative path ./ -->
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
